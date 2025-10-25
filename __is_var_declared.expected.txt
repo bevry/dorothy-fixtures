@@ -1,56 +1,36 @@
 -------------------------------------------------------------------------------
 __is_var_declared
-ERROR: __is_var_declared: At least one variable reference must be provided, none were.
+ERROR: __is_var_declared: At least one variable name must be provided, none were.
 [status = 22]
 -------------------------------------------------------------------------------
 __is_var_declared --
-ERROR: __dereference: Invalid source variable reference: --
+ERROR: __is_var_declared: Invalid variable name: --
+[status = 22]
+-------------------------------------------------------------------------------
+__is_var_declared \{reference\}
+ERROR: __is_var_declared: Invalid variable name, remove the squigglies: {reference}
 [status = 22]
 -------------------------------------------------------------------------------
 __is_var_declared undeclared
 [status = 1]
 -------------------------------------------------------------------------------
-__is_var_declared \{undeclared\}
-[status = 1]
--------------------------------------------------------------------------------
 __is_var_declared undefined
-[status = 0]
--------------------------------------------------------------------------------
-__is_var_declared \{undefined\}
 [status = 0]
 -------------------------------------------------------------------------------
 __is_var_declared undefined_number
 [status = 0]
 -------------------------------------------------------------------------------
-__is_var_declared \{undefined_number\}
-[status = 0]
--------------------------------------------------------------------------------
 __is_var_declared empty_array
-[status = 0]
--------------------------------------------------------------------------------
-__is_var_declared \{empty_array\}
 [status = 0]
 -------------------------------------------------------------------------------
 __is_var_declared empty_string
 [status = 0]
 -------------------------------------------------------------------------------
-__is_var_declared \{empty_string\}
-[status = 0]
--------------------------------------------------------------------------------
 __is_var_declared zero
-[status = 0]
--------------------------------------------------------------------------------
-__is_var_declared \{zero\}
 [status = 0]
 -------------------------------------------------------------------------------
 __is_var_declared empty_array empty_string zero
 [status = 0]
 -------------------------------------------------------------------------------
-__is_var_declared \{empty_array\} \{empty_string\} \{zero\}
-[status = 0]
--------------------------------------------------------------------------------
 __is_var_declared empty_array empty_string zero undeclared
-[status = 1]
--------------------------------------------------------------------------------
-__is_var_declared \{empty_array\} \{empty_string\} \{zero\} \{undeclared\}
 [status = 1]

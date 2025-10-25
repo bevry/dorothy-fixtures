@@ -135,14 +135,10 @@ split on newline via sources and arguments without zero-length
 -------------------------------------------------------------------------------
 __split --target=\{result\} $'--delimiter=\n' --source=\{array\} --source=\{string\} --no-zero-length -- $'\n\nh\n\n'
 [status = 0]
-result[0] = a
-result[1] = b
-result[2] = c
-result[3] = d
-result[4] = e
-result[5] = f
-result[6] = g
-result[7] = h
+result[0] = e
+result[1] = f
+result[2] = g
+result[3] = h
 ===============================================================================
 split with invoke
 -------------------------------------------------------------------------------
@@ -179,15 +175,11 @@ split with invoke and source without zero-length
 -------------------------------------------------------------------------------
 __split --target=\{result\} --source=\{array\} --source=\{string\} --no-zero-length --invoke -- __print_lines $'h\ni\n\n'
 [status = 0]
-result[0] = a
-result[1] = b
-result[2] = c
-result[3] = d
-result[4] = e
-result[5] = f
-result[6] = g
-result[7] = h
-result[8] = i
+result[0] = e
+result[1] = f
+result[2] = g
+result[3] = h
+result[4] = i
 ===============================================================================
 split with invoke and source and stdin without zero-length
 -------------------------------------------------------------------------------

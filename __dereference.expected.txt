@@ -16,11 +16,11 @@ __dereference --source=string --name=\{name\}
 [status = 0]
 name = string
 -------------------------------------------------------------------------------
-__dereference --source=string --name=\{names\}
+__dereference --source=string --append --name=\{names\}
 [status = 0]
 names[0] = string
 -------------------------------------------------------------------------------
-__dereference --source=string --name=\{names\}
+__dereference --source=string --append --name=\{names\}
 [status = 0]
 names[0] = string
 names[1] = string
@@ -33,11 +33,19 @@ __dereference --source=string --value=\{value\}
 [status = 0]
 value = abb
 -------------------------------------------------------------------------------
-__dereference --source=string --value=\{values\}
+__dereference --source=string --overwrite --value=\{value\}
+[status = 0]
+value = abb
+-------------------------------------------------------------------------------
+__dereference --source=string --overwrite --value=\{value\}
+[status = 0]
+value = abb
+-------------------------------------------------------------------------------
+__dereference --source=string --append --value=\{values\}
 [status = 0]
 values[0] = abb
 -------------------------------------------------------------------------------
-__dereference --source=string --value=\{values\}
+__dereference --source=string --append --value=\{values\}
 [status = 0]
 values[0] = abb
 values[1] = abb
@@ -59,11 +67,11 @@ __dereference --source=\{string\} --name=\{name\}
 [status = 0]
 name = string
 -------------------------------------------------------------------------------
-__dereference --source=\{string\} --name=\{names\}
+__dereference --source=\{string\} --append --name=\{names\}
 [status = 0]
 names[0] = string
 -------------------------------------------------------------------------------
-__dereference --source=\{string\} --name=\{names\}
+__dereference --source=\{string\} --append --name=\{names\}
 [status = 0]
 names[0] = string
 names[1] = string
@@ -76,11 +84,19 @@ __dereference --source=\{string\} --value=\{value\}
 [status = 0]
 value = abb
 -------------------------------------------------------------------------------
-__dereference --source=\{string\} --value=\{values\}
+__dereference --source=\{string\} --overwrite --value=\{value\}
+[status = 0]
+value = abb
+-------------------------------------------------------------------------------
+__dereference --source=\{string\} --overwrite --value=\{value\}
+[status = 0]
+value = abb
+-------------------------------------------------------------------------------
+__dereference --source=\{string\} --append --value=\{values\}
 [status = 0]
 values[0] = abb
 -------------------------------------------------------------------------------
-__dereference --source=\{string\} --value=\{values\}
+__dereference --source=\{string\} --append --value=\{values\}
 [status = 0]
 values[0] = abb
 values[1] = abb
@@ -102,33 +118,39 @@ __dereference --source=array --name=\{name\}
 [status = 0]
 name = array
 -------------------------------------------------------------------------------
-__dereference --source=array --name=\{names\}
+__dereference --source=array --append --name=\{names\}
 [status = 0]
 names[0] = array
 -------------------------------------------------------------------------------
-__dereference --source=array --name=\{names\}
+__dereference --source=array --append --name=\{names\}
 [status = 0]
 names[0] = array
 names[1] = array
 -------------------------------------------------------------------------------
 __dereference --source=array --value=\{value\}
 [status = 0]
-value[0] = a
-value[1] = bb
+value = a
 -------------------------------------------------------------------------------
 __dereference --source=array --value=\{value\}
 [status = 0]
-value[0] = a
-value[1] = bb
-value[2] = a
-value[3] = bb
+value = a
 -------------------------------------------------------------------------------
-__dereference --source=array --value=\{values\}
+__dereference --source=array --overwrite --value=\{value\}
+ERROR: __apply_variable_value: Cannot apply an array source array to a non-array target value.
+[status = 22]
+value = a
+-------------------------------------------------------------------------------
+__dereference --source=array --overwrite --value=\{value\}
+ERROR: __apply_variable_value: Cannot apply an array source array to a non-array target value.
+[status = 22]
+value = a
+-------------------------------------------------------------------------------
+__dereference --source=array --append --value=\{values\}
 [status = 0]
 values[0] = a
 values[1] = bb
 -------------------------------------------------------------------------------
-__dereference --source=array --value=\{values\}
+__dereference --source=array --append --value=\{values\}
 [status = 0]
 values[0] = a
 values[1] = bb
@@ -152,33 +174,39 @@ __dereference --source=\{array\} --name=\{name\}
 [status = 0]
 name = array
 -------------------------------------------------------------------------------
-__dereference --source=\{array\} --name=\{names\}
+__dereference --source=\{array\} --append --name=\{names\}
 [status = 0]
 names[0] = array
 -------------------------------------------------------------------------------
-__dereference --source=\{array\} --name=\{names\}
+__dereference --source=\{array\} --append --name=\{names\}
 [status = 0]
 names[0] = array
 names[1] = array
 -------------------------------------------------------------------------------
 __dereference --source=\{array\} --value=\{value\}
 [status = 0]
-value[0] = a
-value[1] = bb
+value = a
 -------------------------------------------------------------------------------
 __dereference --source=\{array\} --value=\{value\}
 [status = 0]
-value[0] = a
-value[1] = bb
-value[2] = a
-value[3] = bb
+value = a
 -------------------------------------------------------------------------------
-__dereference --source=\{array\} --value=\{values\}
+__dereference --source=\{array\} --overwrite --value=\{value\}
+ERROR: __apply_variable_value: Cannot apply an array source array to a non-array target value.
+[status = 22]
+value = a
+-------------------------------------------------------------------------------
+__dereference --source=\{array\} --overwrite --value=\{value\}
+ERROR: __apply_variable_value: Cannot apply an array source array to a non-array target value.
+[status = 22]
+value = a
+-------------------------------------------------------------------------------
+__dereference --source=\{array\} --append --value=\{values\}
 [status = 0]
 values[0] = a
 values[1] = bb
 -------------------------------------------------------------------------------
-__dereference --source=\{array\} --value=\{values\}
+__dereference --source=\{array\} --append --value=\{values\}
 [status = 0]
 values[0] = a
 values[1] = bb

@@ -128,22 +128,24 @@ names[0] = array
 names[1] = array
 -------------------------------------------------------------------------------
 __dereference --source=array --value=\{value\}
-[status = 0]
-value = a
+ERROR: __source_to_target: Cannot apply an array source array to a non-array target value.
+[status = 22]
+value = $PLACEHOLDER__DECLARED_BUT_UNDEFINED
 -------------------------------------------------------------------------------
 __dereference --source=array --value=\{value\}
-[status = 0]
-value = a
+ERROR: __source_to_target: Cannot apply an array source array to a non-array target value.
+[status = 22]
+value = $PLACEHOLDER__DECLARED_BUT_UNDEFINED
 -------------------------------------------------------------------------------
 __dereference --source=array --overwrite --value=\{value\}
-ERROR: __apply_variable_value: Cannot apply an array source array to a non-array target value.
+ERROR: __source_to_target: Cannot apply an array source array to a non-array target value.
 [status = 22]
-value = a
+value = $PLACEHOLDER__DECLARED_BUT_UNDEFINED
 -------------------------------------------------------------------------------
 __dereference --source=array --overwrite --value=\{value\}
-ERROR: __apply_variable_value: Cannot apply an array source array to a non-array target value.
+ERROR: __source_to_target: Cannot apply an array source array to a non-array target value.
 [status = 22]
-value = a
+value = $PLACEHOLDER__DECLARED_BUT_UNDEFINED
 -------------------------------------------------------------------------------
 __dereference --source=array --append --value=\{values\}
 [status = 0]
@@ -184,22 +186,24 @@ names[0] = array
 names[1] = array
 -------------------------------------------------------------------------------
 __dereference --source=\{array\} --value=\{value\}
-[status = 0]
-value = a
+ERROR: __source_to_target: Cannot apply an array source array to a non-array target value.
+[status = 22]
+value = $PLACEHOLDER__DECLARED_BUT_UNDEFINED
 -------------------------------------------------------------------------------
 __dereference --source=\{array\} --value=\{value\}
-[status = 0]
-value = a
+ERROR: __source_to_target: Cannot apply an array source array to a non-array target value.
+[status = 22]
+value = $PLACEHOLDER__DECLARED_BUT_UNDEFINED
 -------------------------------------------------------------------------------
 __dereference --source=\{array\} --overwrite --value=\{value\}
-ERROR: __apply_variable_value: Cannot apply an array source array to a non-array target value.
+ERROR: __source_to_target: Cannot apply an array source array to a non-array target value.
 [status = 22]
-value = a
+value = $PLACEHOLDER__DECLARED_BUT_UNDEFINED
 -------------------------------------------------------------------------------
 __dereference --source=\{array\} --overwrite --value=\{value\}
-ERROR: __apply_variable_value: Cannot apply an array source array to a non-array target value.
+ERROR: __source_to_target: Cannot apply an array source array to a non-array target value.
 [status = 22]
-value = a
+value = $PLACEHOLDER__DECLARED_BUT_UNDEFINED
 -------------------------------------------------------------------------------
 __dereference --source=\{array\} --append --value=\{values\}
 [status = 0]

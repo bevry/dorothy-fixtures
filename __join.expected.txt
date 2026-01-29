@@ -1,39 +1,108 @@
 -------------------------------------------------------------------------------
+__join
+ERROR: __join: At least one source variable reference must be provided, none were.
+[status = 22]
+-------------------------------------------------------------------------------
 __join --
 [status = 0]
 -------------------------------------------------------------------------------
-__join -- 1
-1[status = 0]
+__join a
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
 -------------------------------------------------------------------------------
-__join -- 1 2
-1
-2[status = 0]
+__join a b
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
 -------------------------------------------------------------------------------
-__join -- 1 2 3
-1
-2
-3[status = 0]
+__join -- a b
+ab[status = 0]
 -------------------------------------------------------------------------------
-__join --delimiter= --
-[status = 0]
+__join --delimiter=\,
+ERROR: __join: At least one source variable reference must be provided, none were.
+[status = 22]
 -------------------------------------------------------------------------------
-__join --delimiter= -- 1
-1[status = 0]
+__join --delimiter=\, -- a
+a[status = 0]
 -------------------------------------------------------------------------------
-__join --delimiter= -- 1 2
-12[status = 0]
+__join --delimiter=\, -- a b
+a,b[status = 0]
 -------------------------------------------------------------------------------
-__join --delimiter= -- 1 2 3
-123[status = 0]
+__join --delimiter=\, a b
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
 -------------------------------------------------------------------------------
-__join $'--delimiter=\n' -- 1
-1[status = 0]
+__join --delimiter=\, a
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
 -------------------------------------------------------------------------------
-__join $'--delimiter=\n' -- 1 2
-1
-2[status = 0]
+__join --between=\,
+ERROR: __join: At least one source variable reference must be provided, none were.
+[status = 22]
 -------------------------------------------------------------------------------
-__join $'--delimiter=\n' -- 1 2 3
-1
-2
-3[status = 0]
+__join --between=\, -- a
+a[status = 0]
+-------------------------------------------------------------------------------
+__join --between=\, -- a b
+a,b[status = 0]
+-------------------------------------------------------------------------------
+__join --between=\, a b
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
+-------------------------------------------------------------------------------
+__join --between=\, a
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
+-------------------------------------------------------------------------------
+__join --before=\<
+ERROR: __join: At least one source variable reference must be provided, none were.
+[status = 22]
+-------------------------------------------------------------------------------
+__join --before=\< -- a
+<a[status = 0]
+-------------------------------------------------------------------------------
+__join --before=\< -- a b
+<a<b[status = 0]
+-------------------------------------------------------------------------------
+__join --before=\< a b
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
+-------------------------------------------------------------------------------
+__join --before=\< a
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
+-------------------------------------------------------------------------------
+__join --after=\>
+ERROR: __join: At least one source variable reference must be provided, none were.
+[status = 22]
+-------------------------------------------------------------------------------
+__join --after=\> -- a
+a>[status = 0]
+-------------------------------------------------------------------------------
+__join --after=\> -- a b
+a>b>[status = 0]
+-------------------------------------------------------------------------------
+__join --after=\> a b
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
+-------------------------------------------------------------------------------
+__join --after=\> a
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
+-------------------------------------------------------------------------------
+__join --before=\< --after=\> --between=\,
+ERROR: __join: At least one source variable reference must be provided, none were.
+[status = 22]
+-------------------------------------------------------------------------------
+__join --before=\< --after=\> --between=\, -- a
+<a>[status = 0]
+-------------------------------------------------------------------------------
+__join --before=\< --after=\> --between=\, -- a b
+<a>,<b>[status = 0]
+-------------------------------------------------------------------------------
+__join --before=\< --after=\> --between=\, a b
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]
+-------------------------------------------------------------------------------
+__join --before=\< --after=\> --between=\, a
+ERROR: __join: An unrecognised argument was provided: a
+[status = 22]

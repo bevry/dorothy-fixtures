@@ -2622,7 +2622,7 @@ result[@] = [ empty ]
 -------------------------------------------------------------------------------
 __evict --source=\{array\} --prefix=aB --suffix=cd --every --all --ignore-case --target=\{result\}
 ERROR: __iterate: Not all lookups were found, expected 2 but found 1:
-ITERATE__lookups[0] = --prefix=ab
+ITERATE__lookups[0] = --prefix=aB
 ITERATE__lookups[1] = --suffix=cd
 ITERATE__consumed_lookups_map[0] = 6
 ITERATE__results[0] = a
@@ -5040,7 +5040,7 @@ result[@] = [ empty ]
 -------------------------------------------------------------------------------
 __evict --source=\{string\} --prefix=aB --suffix=cd --each --all --ignore-case --target=\{result\}
 ERROR: __iterate: Not all lookups were found, expected 2 but found 1:
-ITERATE__lookups[0] = --prefix=ab
+ITERATE__lookups[0] = --prefix=aB
 ITERATE__lookups[1] = --suffix=cd
 ITERATE__consumed_lookups_map[1] = 12
 ITERATE__results[0] = a aB aBc aB
@@ -5092,7 +5092,7 @@ result[@] = [ empty ]
 -------------------------------------------------------------------------------
 __evict --source=\{string\} --prefix=aB --suffix=cd --every --all --ignore-case --target=\{result\}
 ERROR: __iterate: Not all lookups were found, expected 2 but found 1:
-ITERATE__lookups[0] = --prefix=ab
+ITERATE__lookups[0] = --prefix=aB
 ITERATE__lookups[1] = --suffix=cd
 ITERATE__consumed_lookups_map[1] = 12
 ITERATE__results[0] = a aB aBc aB
@@ -5249,7 +5249,7 @@ result[@] = [ empty ]
 __evict --source=\{string\} --suffix=cd --prefix=aB --each --all --ignore-case --target=\{result\}
 ERROR: __iterate: Not all lookups were found, expected 2 but found 1:
 ITERATE__lookups[0] = --suffix=cd
-ITERATE__lookups[1] = --prefix=ab
+ITERATE__lookups[1] = --prefix=aB
 ITERATE__consumed_lookups_map[0] = 12
 ITERATE__results[0] = a aB aBc aB
 string = a aB aBc aBcd
@@ -5301,7 +5301,7 @@ result[@] = [ empty ]
 __evict --source=\{string\} --suffix=cd --prefix=aB --every --all --ignore-case --target=\{result\}
 ERROR: __iterate: Not all lookups were found, expected 2 but found 1:
 ITERATE__lookups[0] = --suffix=cd
-ITERATE__lookups[1] = --prefix=ab
+ITERATE__lookups[1] = --prefix=aB
 ITERATE__consumed_lookups_map[0] = 12
 ITERATE__results[0] = a aB aBc aB
 string = a aB aBc aBcd

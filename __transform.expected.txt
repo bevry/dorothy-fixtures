@@ -1,0 +1,120 @@
+-------------------------------------------------------------------------------
+__transform --source=\{input_array\} --uppercase
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = AA
+TRANSFORM__results[1] = BB
+TRANSFORM__results[2] = C
+TRANSFORM__results[3] = D
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --source=\{input_string\} --uppercase
+AA BB C D[status = 0]
+-------------------------------------------------------------------------------
+__transform --uppercase -- aA Bb C d
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = AA
+TRANSFORM__results[1] = BB
+TRANSFORM__results[2] = C
+TRANSFORM__results[3] = D
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --uppercase -- aA\ Bb\ C\ d
+AA BB C D[status = 0]
+-------------------------------------------------------------------------------
+__transform --source=\{input_sparse\} --uppercase
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = AAA
+TRANSFORM__results[2] = BB
+TRANSFORM__results[3] = C
+TRANSFORM__results[5] = D
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --source=\{input_array\} --case=upper
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = AA
+TRANSFORM__results[1] = BB
+TRANSFORM__results[2] = C
+TRANSFORM__results[3] = D
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --source=\{input_string\} --case=upper
+AA BB C D[status = 0]
+-------------------------------------------------------------------------------
+__transform --case=upper -- aA Bb C d
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = AA
+TRANSFORM__results[1] = BB
+TRANSFORM__results[2] = C
+TRANSFORM__results[3] = D
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --case=upper -- aA\ Bb\ C\ d
+AA BB C D[status = 0]
+-------------------------------------------------------------------------------
+__transform --source=\{input_sparse\} --case=upper
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = AAA
+TRANSFORM__results[2] = BB
+TRANSFORM__results[3] = C
+TRANSFORM__results[5] = D
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --source=\{input_array\} --lowercase
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = aa
+TRANSFORM__results[1] = bb
+TRANSFORM__results[2] = c
+TRANSFORM__results[3] = d
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --source=\{input_string\} --lowercase
+aa bb c d[status = 0]
+-------------------------------------------------------------------------------
+__transform --lowercase -- aA Bb C d
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = aa
+TRANSFORM__results[1] = bb
+TRANSFORM__results[2] = c
+TRANSFORM__results[3] = d
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --lowercase -- aA\ Bb\ C\ d
+aa bb c d[status = 0]
+-------------------------------------------------------------------------------
+__transform --source=\{input_sparse\} --lowercase
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = aaa
+TRANSFORM__results[2] = bb
+TRANSFORM__results[3] = c
+TRANSFORM__results[5] = d
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --source=\{input_array\} --case=lower
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = aa
+TRANSFORM__results[1] = bb
+TRANSFORM__results[2] = c
+TRANSFORM__results[3] = d
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --source=\{input_string\} --case=lower
+aa bb c d[status = 0]
+-------------------------------------------------------------------------------
+__transform --case=lower -- aA Bb C d
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = aa
+TRANSFORM__results[1] = bb
+TRANSFORM__results[2] = c
+TRANSFORM__results[3] = d
+[status = 22]
+-------------------------------------------------------------------------------
+__transform --case=lower -- aA\ Bb\ C\ d
+aa bb c d[status = 0]
+-------------------------------------------------------------------------------
+__transform --source=\{input_sparse\} --case=lower
+ERROR: __to: If the source TRANSFORM__results is an array, then the target STDOUT must be as well:
+TRANSFORM__results[0] = aaa
+TRANSFORM__results[2] = bb
+TRANSFORM__results[3] = c
+TRANSFORM__results[5] = d
+[status = 22]

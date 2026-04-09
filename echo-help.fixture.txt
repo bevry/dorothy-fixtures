@@ -1,0 +1,469 @@
+-------------------------------------------------------------------------------
+<stdin><http this is not a link</stdin>
+<stderr><http this is not a link
+</stderr>
+
+-------------------------------------------------------------------------------
+<stdin><http this is a link> because we haven't yet needed full autolink syntax</stdin>
+<stderr>[34m[4mhttp this is a link[24m[39m because we haven't yet needed full autolink syntax
+</stderr>
+
+-------------------------------------------------------------------------------
+<stdin>The following must be backticked to not be confused as a dim style:
+a [ bracket followed by a space</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Wrap [90m[ [39m in [90m```[39m.
+Problem:
+[90ma [ bracket followed by a space[39m
+Solution:
+[90m```a [ bracket followed by a space```[39m
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following must be backticked to not be confused as a dim style:
+a ] bracket preceeded by a space</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Wrap [90m] [39m in [90m```[39m.
+Problem:
+[90ma ] bracket preceeded by a space[39m
+Solution:
+[90m```a ] bracket preceeded by a space```[39m
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following should be backticked to not be confused as a dim style:
+fetch 'https://bevry.me/api/github/repos/jqlang/jq/releases' | jq -r '.[] | {tag_name, id}'
+See `github-download` for an example.</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Wrap [90m[][39m in [90m```[39m.
+Problem:
+[90mfetch 'https://bevry.me/api/github/repos/jqlang/jq/releases' | jq -r '.[] | {tag_name, id}'[39m
+Solution:
+[90m```fetch 'https://bevry.me/api/github/repos/jqlang/jq/releases' | jq -r '.[] | {tag_name, id}'```[39m
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following should be backticked to not be confused as a dim style:
+echo-escape-regexp -- '[a-z](?:test)/a/.*.+?'
+See `echo-escape-regexp` for an example.</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Wrap [90m[a-z][39m in [90m```[39m.
+Problem:
+[90mecho-escape-regexp -- '[a-z](?:test)/a/.*.+?'[39m
+Solution:
+[90m```echo-escape-regexp -- '[a-z](?:test)/a/.*.+?'```[39m
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following needs to be backticked to not be confused as an argument style:
+5<=7</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Wrap [90m<=[39m in [90m```[39m.
+Problem:
+[90m5<=7[39m
+Solution:
+[90m```5<=7```[39m
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following is okay:
+--<field>=<value></stdin>
+<stderr>The following is okay:
+[35m--[1m<field>[22m=[1m<value>[39m[22m
+</stderr>
+
+-------------------------------------------------------------------------------
+<stdin>The following needs to be backticked to not be confused as an argument style:
+--tool=<tool:deno|php|python3|?>
+See `echo-html-coder` for an example.</stdin>
+<stderr>The following needs to be backticked to not be confused as an argument style:
+[35m--tool=[1m<tool:deno|php|python3|?>[22m
+[39mSee [90mecho-html-coder[39m for an example.
+</stderr>
+
+-------------------------------------------------------------------------------
+<stdin>The following needs to be backticked to not be confused as an argument style:
+\`\`\`--tool=<tool:deno|php|python3|?>\`\`\`
+See `echo-html-coder` for an example.</stdin>
+<stderr>The following needs to be backticked to not be confused as an argument style:
+\[90m\[39m\[90m--tool=[1m<tool:deno|php|python3|?>[22m\[39m\[90m\[39m
+See [90mecho-html-coder[39m for an example.
+</stderr>
+
+-------------------------------------------------------------------------------
+<stdin>The following needs to be backticked to not be confused as an argument style:
+If enabled, the execution of the command will be wrapped in a message detailing the command itself, e.g. < command arg >...</ command arg >
+See `eval-helper` for an example.</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Wrap [90m< [39m in [90m```[39m.
+Problem:
+[90mIf enabled, the execution of the command will be wrapped in a message detailing the command itself, e.g. < command arg >...</ command arg >[39m
+Solution:
+[90m```If enabled, the execution of the command will be wrapped in a message detailing the command itself, e.g. < command arg >...</ command arg >```[39m
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following needs to be backticked to not be confused as an argument style:
+echo-clear-lines --stdin < <(printf 'a\nb\nc')
+See `echo-clear-lines` for an example.</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Wrap [90m< [39m in [90m```[39m.
+Problem:
+[90mecho-clear-lines --stdin < <(printf 'a\nb\nc')[39m
+Solution:
+[90m```echo-clear-lines --stdin < <(printf 'a\nb\nc')```[39m
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following needs to be backticked to not be confused as an argument style:
+Do not use <<< as it prints a trailing newline.
+See `echo-clear-lines` for an example.</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Wrap [90m< [39m in [90m```[39m.
+Problem:
+[90mDo not use <<< as it prints a trailing newline.[39m
+Solution:
+[90m```Do not use <<< as it prints a trailing newline.```[39m
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following needs to be backticked to not be confused as an argument style:
+{ sleep 1; echo-lines -- 1 2; sleep 1; echo-style --green=3; sleep 1; echo-style --red=4; sleep 1; echo-style --blue=5; sleep 1; } 2>&1 | echo-revolving-door --lines=3
+See `echo-revolving-door` for an example.</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Wrap [90m>&[39m in [90m```[39m.
+Problem:
+[90m{ sleep 1; echo-lines -- 1 2; sleep 1; echo-style --green=3; sleep 1; echo-style --red=4; sleep 1; echo-style --blue=5; sleep 1; } 2>&1 | echo-revolving-door --lines=3[39m
+Solution:
+[90m```{ sleep 1; echo-lines -- 1 2; sleep 1; echo-style --green=3; sleep 1; echo-style --red=4; sleep 1; echo-style --blue=5; sleep 1; } 2>&1 | echo-revolving-door --lines=3```[39m
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>lack of closure for this [<arg> square bracket</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Unable to complete [90m[[39m at [90m25[39m within:
+[90m[<arg> square bracket[39m
+Check for complete opening and closure of this intensity modifier, or for complete opening and closure of intensity modifiers within it.
+If the segment is correct, such as being valid code, then wrap it or the line in three backticks [90m```[39m to prevent its interpretation as an intensity modifier.
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>lack of opening for this <arg>] square bracket</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Unable to complete [90m][39m at [90m30[39m within:
+[90m] square bracket[39m
+Check for complete opening and closure of this intensity modifier, or for complete opening and closure of intensity modifiers within it.
+If the segment is correct, such as being valid code, then wrap it or the line in three backticks [90m```[39m to prevent its interpretation as an intensity modifier.
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following has a missing angled bracket on the option line that makes everything dimmed:
+--[no-]option[=<option:yes|<seconds>]
+    If enabled or omitted, STDIN content will be waited for `1` second before timing out.
+    If <seconds>, STDIN content will be waited for <seconds> before timing out. Decimal values are supported, however decimals will be converted to `1` second on legacy bash versions.
+</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Unable to complete [90m[[39m at [90m105[39m within:
+[90m--[no-]option[=<option:yes|<seconds>][39m
+Check for complete opening and closure of this intensity modifier, or for complete opening and closure of intensity modifiers within it.
+If the segment is correct, such as being valid code, then wrap it or the line in three backticks [90m```[39m to prevent its interpretation as an intensity modifier.
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<stdin>The following requires three backticks:
+\`echo-help.ts [...<styled error messages>] <template.txt\`</stdin>
+<stderr>[41m[97mERROR:[49m[39m Invalid help template. Unable to complete [90m<[39m at [90m84[39m within:
+[90m\[90mecho-help.ts [...<styled error messages>] <template.txt\[39m[39m
+Check for complete opening and closure of this intensity modifier, or for complete opening and closure of intensity modifiers within it.
+If the segment is correct, such as being valid code, then wrap it or the line in three backticks [90m```[39m to prevent its interpretation as an intensity modifier.
+</stderr>
+<status>94</status>
+
+-------------------------------------------------------------------------------
+<arg>first argument</arg>
+<arg>--blue=second argument</arg>
+<stdin>This <bold> should be bold.
+This [dim] should be dim.
+This <bold[dim+bold<bold+dim[dim+bold]bold+dim>dim+bold]bold> should be combination.
+This [dim<bold+dim[dim+bold<bold+dim>dim+bold]bold+dim>dim] should be combination.
+This should be bold and dim [<bold-and-dim>]
+
+This ```<``` blah ```>``` should have no effect
+This ```< ``` blah ``` >``` should have no effect
+This ```[``` blah ```]``` should have no effect
+This ```[ ``` blah ``` ]``` should have no effect
+This ```<&``` blah ```>&``` should have no effect
+This ``` <&``` blah ``` >&``` should have no effect
+This ```<(``` blah ```)>``` should have no effect
+This ```<( ``` blah ``` )>``` should have no effect
+This ```<<``` blah ```>>``` should have no effect
+This ```<< ``` blah ``` >>``` should have no effect
+This ```<<<``` blah ```>>>``` should have no effect
+This ```<<< ``` blah ``` >>>``` should have no effect
+
+HEADER:
+`command [...options] <argument> [--option=<value>]`
+```{ sleep 1; echo-lines -- 1 2; sleep 1; echo-style --green=3; sleep 1; echo-style --red=4; sleep 1; echo-style --blue=5; sleep 1; } 2>&1 | echo-revolving-door --lines=3```
+
+OPTIONS:
+--a | b
+<value> | --value=<value>
+...<thing>
+| action
+    Description
+    --argument
+        If set to `--option=<value> ...[--option=<value>]`
+    --util=<utility> | --utils=<utility1,utility2,...>
+        Install additional utilities during installation.
+
+& review [...arguments]
+    Open the git repository in your desired git reviewer. Supports: `GitFox`, `Tower`
+    ...<argument>
+        Forwarded to the reviewer.
+
+--<field-name>=<field-value>
+    Filter devices to only those that the <field-name> specified as <field-value>.
+
+EXAMPLES:
+Using arguments. Note that the argument technique should be discouraged, as can cause `Argument list too long` error:
+<https://github.com/bevry/dorothy/actions/runs/7622089094/job/20759535555#step:4:3259>
+`printf '%s\n' 'sup'; printf 'a\nb\nc'
+echo-clear-lines -- $'a\nb\nc'`
+
+An important note:
+! my important note.
+    ! my other important note.
+
+Using process substitution:
+```
+printf '%s\n' 'sup'; printf 'a\nb\nc'
+echo-clear-lines --stdin < <(printf 'a\nb\nc')
+```
+
+Do not use ```<<<``` as it prints a trailing newline, which would erase `sup`.
+
+Using STDIN:
+`printf '%s\n' 'sup'; printf 'a\nb\nc'
+printf 'a\nb\nc' | echo-clear-lines`
+
+Using `tee`:
+```
+printf '%s\n' 'sup';
+file="$(mktemp)"; printf 'a\nb\nc' | tee -- "$file
+echo-clear-lines < "$file"`
+```
+
+```
+echo-escape-regexp -- '[a-z](?:test)/a/.*.+?'
+```
+Outputs: ```\[a-z\]\(\?:test\)/a/\.\*\.\+\?```
+Returns: [0]
+
+```
+echo-lines -- '[a-z](?:test)/a/.*.+?' | echo-escape-regexp --stdin
+```
+Outputs: ```\[a-z\]\(\?:test\)/a/\.\*\.\+\?```
+Returns: [0]
+
+`echo-split --needle=' ' -- 'a b' 'c d'`
+`echo-lines -- 'a b' 'c d' | echo-split --needle=' ' --stdin`
+Outputs:
+`a
+b
+c
+d`
+Returns: [0]
+
+`echo-verbose -- a b c`
+`echo-lines -- a b c | echo-verbose --stdin`
+Outputs:
+```
+[0] = [a]
+[1] = [b]
+[2] = [c]
+```
+Returns: [0]
+
+`echo-trim-zero-length -- 'a' '' 'b' ' ' 'c' 'null' 'd' 'false'`
+`echo-lines -- 'a' '' 'b' ' ' 'c' 'null' 'd' 'false' | echo-trim-zero-length --stdin`
+Outputs:
+`a
+b
+
+c
+null
+d
+false`
+Returns: [1]
+
+CODE FENCES:
+```
+[0] = <value>
+```
+    Indented:
+    ```
+    [1] = <indented>
+    ```
+
+FOOTER:
+A <http://url> another <https://url>
+
+If you want to also do TTY content, do:
+    ```
+    TERMINAL_OUTPUT_TARGET=2 ... 2>&1 | echo-revolving-door ...
+    ```
+Note that would only hijack Dorothy TTY outputs, as other commands will just write to `/dev/tty` directly, rather than going through Dorothy's TTY helpers.
+
+LIST:
+* b
+*not a list
+- not a list
+--not a list
+-- not a list
+    * a
+    *not a list
+    - not a list
+    --not a list
+    -- not a list
+
+RETURNS:
+[0] success
+[1] error
+[*] error
+Returns: [*]</stdin>
+<stderr>This [1m<bold>[22m should be bold.
+This [2m[dim][22m should be dim.
+This [1m<bold[2m[dim+bold[1m<bold+dim[2m[dim+bold][22m[1m[2m[1mbold+dim>[22m[1m[2mdim+bold][22m[1mbold>[22m should be combination.
+This [2m[dim[1m<bold+dim[2m[dim+bold[1m<bold+dim>[22m[2m[1m[2mdim+bold][22m[2m[1mbold+dim>[22m[2mdim][22m should be combination.
+This should be bold and dim [2m[[1m<bold-and-dim>[22m[2m][22m
+
+This [90m<[39m blah [90m>[39m should have no effect
+This [90m< [39m blah [90m >[39m should have no effect
+This [90m[[39m blah [90m][39m should have no effect
+This [90m[ [39m blah [90m ][39m should have no effect
+This [90m<&[39m blah [90m>&[39m should have no effect
+This [90m <&[39m blah [90m >&[39m should have no effect
+This [90m<([39m blah [90m)>[39m should have no effect
+This [90m<( [39m blah [90m )>[39m should have no effect
+This [90m<<[39m blah [90m>>[39m should have no effect
+This [90m<< [39m blah [90m >>[39m should have no effect
+This [90m<<<[39m blah [90m>>>[39m should have no effect
+This [90m<<< [39m blah [90m >>>[39m should have no effect
+
+[35mHEADER:[39m
+[90mcommand [2m[...options][22m [1m<argument>[22m [2m[--option=[1m<value>[22m[2m][22m[39m
+[90m{ sleep 1; echo-lines -- 1 2; sleep 1; echo-style --green=3; sleep 1; echo-style --red=4; sleep 1; echo-style --blue=5; sleep 1; } 2>&1 | echo-revolving-door --lines=3[39m
+
+[35mOPTIONS:[39m
+[35m--a | b
+[39m[35m[1m<value>[22m | --value=[1m<value>[22m
+[39m[35m...[1m<thing>[22m
+[39m[35m| action
+[39m    Description
+    [35m--argument
+[39m        If set to [90m--option=[1m<value>[22m ...[2m[--option=[1m<value>[22m[2m][22m[39m
+    [35m--util=[1m<utility>[22m | --utils=[1m<utility1,utility2,...>[22m
+[39m        Install additional utilities during installation.
+
+[35mreview [2m[...arguments][22m
+[39m    Open the git repository in your desired git reviewer. Supports: [90mGitFox[39m, [90mTower[39m
+    [35m...[1m<argument>[22m
+[39m        Forwarded to the reviewer.
+
+[35m--[1m<field-name>[22m=[1m<field-value>[22m
+[39m    Filter devices to only those that the [1m<field-name>[22m specified as [1m<field-value>[22m.
+
+[35mEXAMPLES:[39m
+Using arguments. Note that the argument technique should be discouraged, as can cause [90mArgument list too long[39m error:
+[34m[4mhttps://github.com/bevry/dorothy/actions/runs/7622089094/job/20759535555#step:4:3259[24m[39m
+[90mprintf '%s\n' 'sup'; printf 'a\nb\nc'
+echo-clear-lines -- $'a\nb\nc'[39m
+
+An important note:
+[31m![39m my important note.
+[31m    ![39m my other important note.
+
+Using process substitution:
+[90mprintf '%s\n' 'sup'; printf 'a\nb\nc'
+echo-clear-lines --stdin < <(printf 'a\nb\nc')
+[39m
+Do not use [90m<<<[39m as it prints a trailing newline, which would erase [90msup[39m.
+
+Using STDIN:
+[90mprintf '%s\n' 'sup'; printf 'a\nb\nc'
+printf 'a\nb\nc' | echo-clear-lines[39m
+
+Using [90mtee[39m:
+[90mprintf '%s\n' 'sup';
+file="$(mktemp)"; printf 'a\nb\nc' | tee -- "$file
+echo-clear-lines < "$file"`
+[39m
+[90mecho-escape-regexp -- '[a-z](?:test)/a/.*.+?'
+[39mOutputs: [90m\[a-z\]\(\?:test\)/a/\.\*\.\+\?[39m
+Returns: [32m[0][39m
+
+[90mecho-lines -- '[a-z](?:test)/a/.*.+?' | echo-escape-regexp --stdin
+[39mOutputs: [90m\[a-z\]\(\?:test\)/a/\.\*\.\+\?[39m
+Returns: [32m[0][39m
+
+[90mecho-split --needle=' ' -- 'a b' 'c d'[39m
+[90mecho-lines -- 'a b' 'c d' | echo-split --needle=' ' --stdin[39m
+Outputs:
+[90ma
+b
+c
+d[39m
+Returns: [32m[0][39m
+
+[90mecho-verbose -- a b c[39m
+[90mecho-lines -- a b c | echo-verbose --stdin[39m
+Outputs:
+[90m[0] = [a]
+[1] = [b]
+[2] = [c]
+[39mReturns: [32m[0][39m
+
+[90mecho-trim-zero-length -- 'a' '' 'b' ' ' 'c' 'null' 'd' 'false'[39m
+[90mecho-lines -- 'a' '' 'b' ' ' 'c' 'null' 'd' 'false' | echo-trim-zero-length --stdin[39m
+Outputs:
+[90ma
+b
+
+c
+null
+d
+false[39m
+Returns: [31m[1][39m
+
+[35mCODE FENCES:[39m
+[90m[0] = <value>
+[39m    Indented:
+[90m    [1] = <indented>
+[39m
+[35mFOOTER:[39m
+A [34m[4mhttp://url[24m[39m another [34m[4mhttps://url[24m[39m
+
+If you want to also do TTY content, do:
+[90m    TERMINAL_OUTPUT_TARGET=2 ... 2>&1 | echo-revolving-door ...
+[39mNote that would only hijack Dorothy TTY outputs, as other commands will just write to [90m/dev/tty[39m directly, rather than going through Dorothy's TTY helpers.
+
+[35mLIST:[39m
+• b
+*not a list
+[35m- not a list
+[39m[35m--not a list
+[39m[35m-- not a list
+[39m    • a
+    *not a list
+    [35m- not a list
+[39m    [35m--not a list
+[39m    [35m-- not a list
+[39m
+[35mRETURNS:[39m
+[32m[0][39m success
+[31m[1][39m error
+[31m[*][39m error
+Returns: [31m[*][39m
+
+[41m[97mERROR:[49m[39m first argument[34msecond argument[39m
+</stderr>
